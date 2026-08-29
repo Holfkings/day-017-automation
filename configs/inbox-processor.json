@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "description": "Procesa facturas entrantes: mueve PDF y dispara OCR de ejemplo.",
+  "source": "~/Inbox",
+  "recursive": false,
+  "rules": [
+    {
+      "name": "Factura proveedor A",
+      "match_all": [
+        { "name_regex": "(?i)factura-.*\\.pdf$" },
+        { "size": { "min": 1024 } }
+      ],
+      "action": {
+        "type": "move",
+        "target": "~/Inbox/Procesadas/Facturas-A/{year}/{month}",
+        "rename": "{timestamp}_{name}"
+      }
+    },
+    {
+      "name": "Comprobante pequeño a revisar",
+      "match_any": [
+        { "name_regex": "(?i)comprobante" }
+      ],
+      "action": {
+        "type": "copy",
+        "target": "~/Inbox/Revision"
+      }
+    }
+  ]
+}

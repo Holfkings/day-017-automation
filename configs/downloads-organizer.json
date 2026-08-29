@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "description": "Organiza la carpeta de Descargas por tipo y fecha.",
+  "source": "~/Downloads",
+  "recursive": false,
+  "rules": [
+    {
+      "name": "Imágenes a Fotos",
+      "match_any": [
+        { "extension": [".jpg", ".jpeg", ".png", ".gif", ".webp", ".heic", ".svg"] }
+      ],
+      "action": {
+        "type": "move",
+        "target": "~/Downloads/Organizado/Imágenes/{year}/{month}",
+        "rename": "{date}_{name}"
+      }
+    },
+    {
+      "name": "Documentos a Documentos",
+      "match_any": [
+        { "extension": [".pdf", ".doc", ".docx", ".txt", ".rtf", ".odt"] }
+      ],
+      "action": {
+        "type": "move",
+        "target": "~/Downloads/Organizado/Documentos",
+        "rename": "{date}_{name}"
+      }
+    },
+    {
+      "name": "Hojas de cálculo",
+      "match_any": [
+        { "extension": [".xls", ".xlsx", ".csv"] }
+      ],
+      "action": {
+        "type": "move",
+        "target": "~/Downloads/Organizado/Hojas-de-calculo"
+      }
+    },
+    {
+      "name": "Vídeos a Vídeos",
+      "match_any": [
+        { "extension": [".mp4", ".mov", ".mkv", ".avi", ".webm"] }
+      ],
+      "action": {
+        "type": "move",
+        "target": "~/Downloads/Organizado/Videos"
+      }
+    },
+    {
+      "name": "Instaladores antiguos (>+30 días) a reciclar",
+      "match_all": [
+        { "extension": [".exe", ".msi", ".dmg", ".pkg"] },
+        { "age_days": { "min": 30 } }
+      ],
+      "action": {
+        "type": "move",
+        "target": "~/Downloads/Organizado/Reciclaje"
+      }
+    }
+  ]
+}

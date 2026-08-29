@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fileflow"
+version = "1.0.0"
+description = "Motor de automatización de archivos por reglas (vigilancia, organización y procesamiento)."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "Holfkings" }]
+keywords = ["automation", "files", "rules", "organizer", "watch"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: System :: Filesystems",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/Holfkings/day-017-automation"
+Repository = "https://github.com/Holfkings/day-017-automation"
+
+[project.scripts]
+fileflow = "fileflow.cli:main"
+
+[tool.setuptools]
+packages = ["fileflow"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

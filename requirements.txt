@@ -1,0 +1,6 @@
+# FileFlow usa solo la biblioteca estándar de Python (>=3.8).
+# Estas dependencias son OPCIONALES:
+#   pyyaml   -> permite leer configuraciones en YAML además de JSON.
+#   pytest   -> solo para ejecutar la suite de pruebas (tests/).
+pyyaml>=6.0; python_version >= "3.8"
+pytest>=7.0; python_version >= "3.8"
