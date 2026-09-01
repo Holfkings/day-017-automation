@@ -1,0 +1,12 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; background: #0a0c10; color: #e4e8f0; min-height: 100vh; line-height: 1.5; }
+.app { max-width: 800px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; gap: 20px; min-height: 100vh; }
+.header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 16px; border-bottom: 1px solid #2a2f3a; }
+.brand { display: flex; align-items: center; gap: 10px; }
+.logo { font-size: 28px; }
+.name { font-size: 22px; font-weight: 700; }
+.gold { color: #d4af37; }
+.main { flex: 1; display: flex; flex-direction: column; gap: 12px; padding: 40px 0; }
+.main h1 { font-size: 28px; }
+.main p { color: #8892a4; }
+.footer { text-align: center; color: #8892a4; font-size: 11px; padding-top: 16px; border-top: 1px solid #2a2f3a; }
